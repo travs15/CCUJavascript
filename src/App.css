@@ -1,0 +1,47 @@
+@import url('https://js.arcgis.com/4.7/esri/css/main.css');
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+nav a {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 30px;
+}
+/*
+#btn1{
+  background-color: #56B949;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+}
+#btn2{
+  background-color: #88C542;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+}
+#btn3{
+  background-color: #F9ED3A;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+}
+#btn4{
+  background-color: #F0A32F;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+}*/
+
+container{
+  background-color: black;
+}
