@@ -1,9 +1,6 @@
 
 <template>
   <div class="skill">
-    <div class="holder">
-      <div v-bind:class="{alert: showAlert}"></div>
-    </div>
     <body>
       <h1>3D map page</h1>
       <div id="viewDiv"></div>

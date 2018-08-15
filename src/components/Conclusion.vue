@@ -1,8 +1,5 @@
 <template>
   <div class="conc">
-    <div class="holder">
-      <div v-bind:class="{alert: showAlert}"></div>
-    </div>
     <h1>this is a conclusion page</h1>
     <p>discusion del resultado de la aplicación</p>
   </div>

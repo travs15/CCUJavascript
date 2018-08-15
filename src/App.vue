@@ -32,7 +32,7 @@
         </div>
         <div class="col-sm">
           <router-link to="/conclusion"><a class="btn btn-outline-primary rounded-circle" id="btn4" href="" role="button">
-            Conclusion</a></router-link>
+            C</a></router-link>
         </div>
       </div>
     </div>

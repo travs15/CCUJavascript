@@ -1,8 +1,5 @@
 <template>
   <div class="about">
-    <div class="holder">
-      <div v-bind:class="{alert: showAlert}"></div>
-    </div>
     <body>
       <h1>2D map page</h1>
       <p>Visualización de mapa 2D</p>

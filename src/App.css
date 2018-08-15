@@ -16,32 +16,34 @@ nav a {
   color: #2c3e50;
   margin-top: 30px;
 }
-/*
+
 #btn1{
-  background-color: #56B949;
-  width: 100%;
   text-decoration: none;
-  color: white;
+  font-size: 2em;
+  margin: 0.5em;
+  /*color: white;*/
 }
 #btn2{
-  background-color: #88C542;
-  width: 100%;
   text-decoration: none;
-  color: white;
+  font-size: 2em;
+  margin: 0.5em;
+  /*color: white;*/
 }
 #btn3{
-  background-color: #F9ED3A;
-  width: 100%;
   text-decoration: none;
-  color: white;
+  font-size: 2em;
+  margin: 0.5em;
+  /*color: white;*/
 }
 #btn4{
-  background-color: #F0A32F;
-  width: 100%;
   text-decoration: none;
-  color: white;
-}*/
+  font-size: 2em;
+  margin: 0.5em;
+  /*color: white;*/
+}
 
-container{
-  background-color: black;
+.container{
+  border-radius: .5em;
+  background-color: lightgrey;
+  width: 40%;
 }

@@ -1,8 +1,5 @@
 <template>
   <div class="map">
-    <div class="holder">
-      <div v-bind:class="{alert: showAlert}"></div>
-    </div>
     <h1>this is a map page</h1>
     <p>implementacion de mapa pendiente</p>
     <body>
