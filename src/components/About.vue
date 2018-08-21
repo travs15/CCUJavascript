@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about" id="about">
     <body>
       <h1>2D map page</h1>
       <p>Visualización de mapa 2D</p>
@@ -27,23 +27,34 @@ export default {
       loadModules(
         [
           "esri/views/MapView",
-          "esri/WebMap"
+          //"esri/WebMap",
+          "esri/Map",
+          "esri/layers/FeatureLayer"
         ],
         options
-      ).then(([MapView, WebMap]) => {
-        const webmap = new WebMap({
+      ).then(([MapView, /*WebMap,*/ Map ,FeatureLayer]) => {
+        /*const webmap = new WebMap({
           portalItem: {
             id: "f2e9b762544945f390ca4ac3671cfa72"
           }
+        });*/
+        var map = new Map({
+          basemap: "gray"
+          //url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Radiacion_Solar/MapServer"
         });
+
         const view = new MapView({
-          map: webmap,
+          map: map,
           container: "viewDiv"
         });
-        view.constraints = {
-          rotationEnabled: false
-        };
+        // Cargar capa de plantas de generacion real
+        var layer = new FeatureLayer({
+          // URL to the service
+          url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Generación_Real/MapServer/0"
+        });
+
       });
+
     }
   },
   mounted() {

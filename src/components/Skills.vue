@@ -2,8 +2,47 @@
 <template>
   <div class="skill">
     <body>
-      <h1>3D map page</h1>
+      <h1>Inicio</h1>
       <div id="viewDiv"></div>
+      <div class="container">
+
+        <div class="row mt-5">
+          <div class="col-4">
+            <div class="card mx-auto">
+              <img class="card-img-top img-responsive" src="/thumb2.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Gráfica</h5>
+                <p class="card-text">Descripción</p>
+                <router-link to="/about"><a href="#" class="btn btn-outline-primary">Ver más</a></router-link>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card mx-auto">
+              <img class="card-img-top img-responsive" src="/thumb3.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Mapa</h5>
+                <p class="card-text">Descripción</p>
+                <router-link to="/mapa"><a href="#" class="btn btn-outline-primary">Ver más</a></router-link>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card mx-auto">
+              <img class="card-img-top img-responsive" src="/thumb1.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Integración</h5>
+                <p class="card-text">Descripción</p>
+                <router-link to="/conclusion"><a href="#" class="btn btn-outline-primary">Ver más</a></router-link>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <router-view/>
+      </div>
     </body>
   </div>
 </template>

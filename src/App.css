@@ -8,42 +8,50 @@
   color: #2c3e50;
 }
 
-nav a {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 30px;
+html, body {
+    height: 100%;
 }
 
-#btn1{
-  text-decoration: none;
-  font-size: 2em;
-  margin: 0.5em;
-  /*color: white;*/
-}
-#btn2{
-  text-decoration: none;
-  font-size: 2em;
-  margin: 0.5em;
-  /*color: white;*/
-}
-#btn3{
-  text-decoration: none;
-  font-size: 2em;
-  margin: 0.5em;
-  /*color: white;*/
-}
-#btn4{
-  text-decoration: none;
-  font-size: 2em;
-  margin: 0.5em;
-  /*color: white;*/
+body {
+    background-color: #2B2E3B;
 }
 
-.container{
-  border-radius: .5em;
-  background-color: lightgrey;
-  width: 40%;
+.navbar {
+    background-color: #2F3241;
+    border-bottom: 1px solid black;
+}
+
+#logo {
+    height: 60px;
+}
+
+i, ion-icon {
+    font-size: 1.8rem;
+}
+
+/*.btn {*/
+    /*height: 60px;*/
+    /*width: 60px;*/
+/*}*/
+
+.btn-outline-primary {
+    color: #FFFFFF;
+    background-color: transparent;
+    border-color: #9FEAF9;
+}
+
+.btn-outline-primary:hover {
+    color: #2F3241;
+    background-color: #9FEAF9;
+    border-color: #9FEAF9;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
+    color: #FFFFFF;
+    background-color: #9FEAF9;
+    border-color: #9FEAF9;
+}
+
+.btn-outline-primary.focus, .btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(159,234,249,.5);
 }
