@@ -48,10 +48,29 @@ export default {
           container: "viewDiv"
         });
         // Cargar capa de plantas de generacion real
-        var layer = new FeatureLayer({
+        var estacionesEnergia = new FeatureLayer({
           // URL to the service
           url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Generación_Real/MapServer/0"
         });
+
+        var radiacionSolar = new FeatureLayer({
+          // URL to the service
+          url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Radiacion_Solar/MapServer/1"
+        });
+
+        var vientosEnergia = new FeatureLayer({
+          // URL to the service
+          url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Viento_Energia_50/MapServer/0"
+        });
+
+        var vientosVelocidad = new FeatureLayer({
+          // URL to the service
+          url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Viento_Velocidad/MapServer/0"
+        });
+        //map.add(vientosVelocidad);
+        //map.add(vientosEnergia);
+        //map.add(radiacionSolar);
+        map.add(estacionesEnergia);
 
       });
 
