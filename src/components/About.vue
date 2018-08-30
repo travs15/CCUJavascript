@@ -1,8 +1,6 @@
 <template>
   <div class="about" id="about">
     <body>
-      <h1 >2D map page</h1>
-      <p>Visualización de mapa 2D</p>
       <div id="viewDiv"></div>
     </body>
   </div>
@@ -40,13 +38,19 @@ export default {
           }
         });*/
         var map = new Map({
-          basemap: "none"
-          //url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Radiacion_Solar/MapServer"
+          basemap: "none"// si se quita el mapa base no es necesario extent
         });
 
         const view = new MapView({
           map: map,
           container: "viewDiv"
+          //,extent: { // autocasts as new Extent()
+          //  xmin: -9177811,
+          //  ymin: 4247000,
+          //  xmax: -9176791,
+          //  ymax: 4247784,
+          //  spatialReference: 102100
+          //}
         });
         // Cargar capa de plantas de generacion real
         var estacionesEnergia = new FeatureLayer({
@@ -68,10 +72,16 @@ export default {
           // URL to the service
           url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Viento_Velocidad/MapServer/0"
         });
+
+        var cobertura = new FeatureLayer({
+          // URL to the service
+          url: "https://services.arcgis.com/8DAUcrpQcpyLMznu/arcgis/rest/services/MapaCoberturasEnergia_WFL1/FeatureServer"
+        });
+
         //map.add(vientosVelocidad);
         //map.add(vientosEnergia);
-
-        map.add(radiacionSolar);
+        map.add(cobertura);
+        //map.add(radiacionSolar);
         map.add(estacionesEnergia);
 
       });

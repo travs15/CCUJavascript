@@ -1,8 +1,7 @@
 
 <template>
   <div class="skill">
-    <body>
-      <h1>Inicio</h1>
+  <body>
       <div id="viewDiv"></div>
       <div class="container">
 
@@ -13,7 +12,7 @@
               <div class="card-body">
                 <h5 class="card-title">Gráfica</h5>
                 <p class="card-text">Descripción</p>
-                <router-link to="/about"><a href="#" class="btn btn-outline-primary">Ver más</a></router-link>
+                <router-link to="/mapa"><a href="#" class="btn btn-outline-primary">Ver más</a></router-link>
               </div>
             </div>
           </div>
@@ -24,7 +23,7 @@
               <div class="card-body">
                 <h5 class="card-title">Mapa</h5>
                 <p class="card-text">Descripción</p>
-                <router-link to="/mapa"><a href="#" class="btn btn-outline-primary">Ver más</a></router-link>
+                <router-link to="/about"><a href="#" class="btn btn-outline-primary">Ver más</a></router-link>
               </div>
             </div>
           </div>
@@ -55,39 +54,6 @@ export default {
     return{
       showAlert: true
     }
-  },//se declaran los metodos que se van a usar en la aplicacion
-  methods: {
-    createMap() {
-      const options = {
-        url: "https://js.arcgis.com/4.8/"
-      };
-      //se cargan los modulos que se usan del api de javascript
-      loadModules(
-        [
-          "esri/Map",
-          "esri/views/SceneView"
-        ],
-        options
-      ).then(([Map, SceneView]) => {
-        const map = new Map({
-          /*portalItem: {
-            id: "f2e9b762544945f390ca4ac3671cfa72"
-          }*/
-          basemap: "streets",
-          ground: "world-elevation"
-        });
-        const view = new SceneView({
-          container: "viewDiv",  // Reference to the DOM node that will contain the view
-          map: map  // References the map object created in step 3
-        });
-        view.constraints = {
-          rotationEnabled: false
-        };
-      });
-    }
-  },
-  mounted() {
-    this.createMap();
   }
 }
 </script>
