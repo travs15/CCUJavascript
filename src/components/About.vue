@@ -1,7 +1,7 @@
 <template>
   <div class="about" id="about">
     <body>
-      <h1>2D map page</h1>
+      <h1 >2D map page</h1>
       <p>Visualización de mapa 2D</p>
       <div id="viewDiv"></div>
     </body>
@@ -12,6 +12,7 @@
 import { loadModules } from "esri-loader";//importar el esri loader
 export default {
   name: 'About',
+  title: 'nea',
   data(){
     return{
       showAlert: true
@@ -39,7 +40,7 @@ export default {
           }
         });*/
         var map = new Map({
-          basemap: "gray"
+          basemap: "none"
           //url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Radiacion_Solar/MapServer"
         });
 
@@ -69,7 +70,8 @@ export default {
         });
         //map.add(vientosVelocidad);
         //map.add(vientosEnergia);
-        //map.add(radiacionSolar);
+
+        map.add(radiacionSolar);
         map.add(estacionesEnergia);
 
       });

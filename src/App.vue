@@ -5,6 +5,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <a class="navbar-brand" href="http://desarrolladores.esri.co/"><img id="logo" src='logo.png' alt=""></a>
+        <h1 id="titulo">Map</h1>
         <router-link to="/"><a class="btn btn-outline-primary"><i class="fas fa-home"></i></a></router-link>
       </div>
     </nav>
