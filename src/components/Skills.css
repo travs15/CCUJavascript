@@ -3,7 +3,6 @@
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 25px;
 }
@@ -23,9 +22,6 @@ h1{
   text-align: center;
 }
 
-p{
-  text-align: center;
-}
 
 body {
     background-color: #2B2E3B;
@@ -71,22 +67,7 @@ i, ion-icon {
     box-shadow: 0 0 0 0.2rem rgba(159,234,249,.5);
 }
 
-/*.row {*/
-    /*border: 1px solid #9FEAF9;*/
-    /*border-radius: 30px;*/
-    /*height: 400px;*/
-    /*-webkit-box-shadow: rgba(39,44,49,.06) 8px 14px 38px, rgba(39,44,49,.03) 1px 3px 8px;*/
-    /*box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);*/
-/*}*/
 
-/*.col-6-lg {*/
-    /*width: 570px;*/
-    /*height: 100%*/
-/*}*/
-
-/*.col-6-lg:first-child {*/
-    /*border-right: 1px solid #9FEAF9;*/
-/*}*/
 
 .jumbotron {
     height: 350px;

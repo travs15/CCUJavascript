@@ -1,11 +1,8 @@
 @import url('https://js.arcgis.com/4.7/esri/css/main.css');
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+    font-family: 'Lato', sans-serif;
+
 }
 
 html, body {
@@ -24,15 +21,6 @@ body {
 #logo {
     height: 60px;
 }
-
-i, ion-icon {
-    font-size: 1.8rem;
-}
-
-/*.btn {*/
-    /*height: 60px;*/
-    /*width: 60px;*/
-/*}*/
 
 .btn-outline-primary {
     color: #FFFFFF;

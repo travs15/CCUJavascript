@@ -1,22 +1,26 @@
 @import url('https://js.arcgis.com/4.7/esri/css/main.css');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
 .conc {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    margin-top: 25px;
 }
 
-.alert{
-  background-color: #F0A32F;
-  width: 100%;
-  height: 20px;
+.jumbotron {
+    background-color: transparent;
+    border: 1px solid black;
+    -webkit-box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
+    height: 500px;
 }
-body{
-  background-color: #2B2E3B;
-}
-#viewDiv {
-  height: calc(100vh - 7rem);
-  width: 70%;
-}
+
+/*#viewDiv {*/
+  /*height: calc(100vh - 7rem);*/
+  /*width: 70%;*/
+/*}*/
+
+/*.esri-component esri-attribution esri-widget {*/
+  /*display: none;*/
+/*}*/

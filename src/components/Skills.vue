@@ -1,4 +1,3 @@
-
 <template>
   <div class="skill">
   <body>
@@ -6,35 +5,35 @@
       <div class="container">
 
         <div class="row mt-5">
-          <div class="col-4">
+          <div class="col-lg-4 col-md-6">
             <div class="card mx-auto">
               <img class="card-img-top img-responsive" src="/thumb2.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Gráfica</h5>
-                <p class="card-text">Descripción</p>
-                <router-link to="/mapa"><a href="#" class="btn btn-outline-primary">Ver más</a></router-link>
+                <p class="card-text">Cobertura de energía en el país por departamento y municipio para el año 2015.</p>
+                <router-link to="/mapa"><a href="#" class="btn btn-outline-primary float-right">Ver más</a></router-link>
               </div>
             </div>
           </div>
 
-          <div class="col-4">
+          <div class="col-lg-4 col-md-6">
             <div class="card mx-auto">
               <img class="card-img-top img-responsive" src="/thumb3.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Mapa</h5>
-                <p class="card-text">Descripción</p>
-                <router-link to="/about"><a href="#" class="btn btn-outline-primary">Ver más</a></router-link>
+                  <p class="card-text">Cobertura de energía y población en el país por departamento para el año 2015; plantas de generación de energía.</p>
+                <router-link to="/about"><a href="#" class="btn btn-outline-primary float-right">Ver más</a></router-link>
               </div>
             </div>
           </div>
 
-          <div class="col-4">
+          <div class="col-lg-4 col-md-6">
             <div class="card mx-auto">
               <img class="card-img-top img-responsive" src="/thumb1.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Integración</h5>
-                <p class="card-text">Descripción</p>
-                <router-link to="/conclusion"><a href="#" class="btn btn-outline-primary">Ver más</a></router-link>
+                <p class="card-text">Potencial de radiación solar en el país y generación de energía por combustible por departamento.</p>
+                <router-link to="/conclusion"><a href="#" class="btn btn-outline-primary float-right">Ver más</a></router-link>
               </div>
             </div>
           </div>
