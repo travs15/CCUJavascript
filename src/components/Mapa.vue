@@ -1,5 +1,5 @@
 <template>
-    <div class="about" id="about">
+    <div class="mapa" id="mapa">
         <div class="jumbotron">
             <div class="row container h-100">
                 <div class="col-lg-8 col-md-7">
@@ -9,7 +9,7 @@
                     <p class="text-white">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     </p>
-                    <span><router-link to="/#"><i class="fas fa-arrow-alt-circle-left"></i> Regresar</router-link></span>
+                    <span><router-link to="/main"><i class="fas fa-arrow-alt-circle-left"></i> Regresar</router-link></span>
                 </div>
             </div>
         </div>
@@ -26,8 +26,7 @@ var dojoConfig = {
 
 import { loadModules } from "esri-loader";
 export default {
-    name: 'About',
-    title: 'nea',
+    name: 'mapa',
     data(){
         return {showAlert: true}
     },
@@ -50,12 +49,6 @@ export default {
         ).then(([MapView, Map ,FeatureLayer, watchUtils, dojoQuery]) => {
 
             // Acceder y declarar las diferentes capas
-            const coberturaMpio = new FeatureLayer({
-                portalItem: {
-                    id: "bbf79948f30e4813ba7ed42c06b40503"
-                }
-            });
-
             const coberturaDpto = new FeatureLayer({
                 portalItem: {
                     id: "213d1c47029640278edebaeda4aad2ac"
@@ -237,6 +230,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style src="./About.css" scoped>
+<style src="./mapa.css" scoped>
 
 </style>

@@ -9,7 +9,7 @@
         <!--</body>-->
     <!--</div>-->
 
-    <div class="map" id="map">
+    <div class="grafica" id="grafica">
         <div class="jumbotron">
             <div class="row container h-100">
                 <div class="col-lg-8 col-md-7">
@@ -23,7 +23,7 @@
                  <p class="text-white">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 </p>
-                <span><router-link to="/#"><i class="fas fa-arrow-alt-circle-left"></i> Regresar</router-link></span>
+                <span><router-link to="/main"><i class="fas fa-arrow-alt-circle-left"></i> Regresar</router-link></span>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
 <script>
 import * as d3 from 'd3';
 export default {
-    name: 'mapa',
+    name: 'grafica',
     data(){
         return{
             data: [99, 71, 78, 25, 36, 92],
@@ -64,6 +64,6 @@ export default {
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style src="./mapa.css" scoped>
+<style src="./grafica.css" scoped>
 
 </style>

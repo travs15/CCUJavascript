@@ -11,7 +11,7 @@
               <div class="card-body">
                 <h5 class="card-title">Gráfica</h5>
                 <p class="card-text">Cobertura de energía en el país por departamento y municipio para el año 2015.</p>
-                <router-link to="/mapa"><a href="#" class="btn btn-outline-primary float-right">Ver más</a></router-link>
+                <router-link to="/grafica"><a href="#" class="btn btn-outline-primary float-right">Ver más</a></router-link>
               </div>
             </div>
           </div>
@@ -22,7 +22,7 @@
               <div class="card-body">
                 <h5 class="card-title">Mapa</h5>
                   <p class="card-text">Cobertura de energía y población en el país por departamento para el año 2015; plantas de generación de energía.</p>
-                <router-link to="/about"><a href="#" class="btn btn-outline-primary float-right">Ver más</a></router-link>
+                <router-link to="/mapa"><a href="#" class="btn btn-outline-primary float-right">Ver más</a></router-link>
               </div>
             </div>
           </div>
@@ -33,7 +33,7 @@
               <div class="card-body">
                 <h5 class="card-title">Integración</h5>
                 <p class="card-text">Potencial de radiación solar en el país y generación de energía por combustible por departamento.</p>
-                <router-link to="/conclusion"><a href="#" class="btn btn-outline-primary float-right">Ver más</a></router-link>
+                <router-link to="/integracion"><a href="#" class="btn btn-outline-primary float-right">Ver más</a></router-link>
               </div>
             </div>
           </div>
@@ -48,7 +48,7 @@
 <script>
 import { loadModules } from "esri-loader";//importar el esri loader
 export default {
-  name: 'Skills',
+  name: 'main',
   data(){
     return{
       showAlert: true
@@ -60,6 +60,6 @@ export default {
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style src="./Skills.css" scoped>
+<style src="./main.css" scoped>
 
 </style>

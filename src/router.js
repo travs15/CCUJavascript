@@ -1,33 +1,33 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Skills from './components/Skills.vue'
-import About from './components/About.vue'
-import mapa from './components/mapa.vue'
-import Conclusion from './components/Conclusion.vue'
+import Main from './components/Main.vue'
+import Mapa from './components/Mapa.vue'
+import Grafica from './components/Grafica.vue'
+import Integracion from './components/Integracion.vue'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes:[
     {
-      path: '/',
-      name: 'skills',
-      component: Skills
-    },
-    {
-      path:'/about',
-      name: 'about',
-      component: About
+      path: '/main',
+      name: 'main',
+      component: Main
     },
     {
       path:'/mapa',
       name: 'mapa',
-      component: mapa
+      component: Mapa
     },
     {
-      path:'/conclusion',
-      name: 'conclusion',
-      component: Conclusion
+      path:'/grafica',
+      name: 'grafica',
+      component: Grafica
+    },
+    {
+      path:'/integracion',
+      name: 'integracion',
+      component: Integracion
     }
   ]
 })

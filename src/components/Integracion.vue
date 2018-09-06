@@ -1,5 +1,5 @@
 <template>
-    <div class="conc" id="conc">
+    <div class="integracion" id="integracion">
         <div class="jumbotron">
             <div class="row container h-100">
                 <div class="col-lg-8 col-md-7">
@@ -18,7 +18,7 @@
 <script>
 import { loadModules } from "esri-loader";//importar el esri loader
 export default {
-    name: 'Conclusion',
+    name: 'integracion',
     data(){
         return{
         showAlert: true
@@ -141,6 +141,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style src="./Conclusion.css" scoped>
+<style src="./integracion.css" scoped>
 
 </style>
