@@ -8,12 +8,20 @@
 }
 
 .jumbotron {
-    background-color: transparent;
+    background-color: #2F3241 !important;
     border: 1px solid black;
     -webkit-box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
     height: 75vh;
+}
+
+a {
+    color: #9FEAF9 !important;
+}
+
+a:hover {
+    color: #7ae2f7 !important;
 }
 
 .tooltip {
@@ -26,24 +34,66 @@
     margin: 0 auto;
     padding: 12px;
     border-radius: 4px;
-    box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
     transform: translate3d(-50%, -125%, 0);
     color: white;
-    background-color: #fb6a4a;
-    border: 1px solid #ef3b2c;
-    opacity: 0.95;
+    background-color: #2B2E3B;
+    border: 1px solid black;
+    /*opacity: 0.95;*/
 }
 
-.esri-widget__header, .esri-attribution__sources {
-    display: none;
+hr {
+    width: 75%;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+    max-width: 90%;
 }
 
-.esri-widget {
+.text-emph {
+    color: #9FEAF9;
+}
+
+.esri-legend--card.esri-widget, .esri-widget--button {
+    background-color: #2F3241 !important;
+    border: 1px solid black;
+    -webkit-box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
+}
+
+.esri-widget--button {
+    color: #9FEAF9 !important;
+}
+
+.esri-component.esri-attribution.esri-widget {
     background-color: transparent;
 }
 
-/*#viewDiv {*/
-    /*height: calc(100vh - 7rem);*/
-    /*width: 70%;*/
+.esri-attribution__sources {
+    display: none;
+}
+
+.esri-widget__header.esri-legend--card__carousel-title {
+    display: none;
+}
+
+.esri-legend--card__label-cell {
+    color: white;
+}
+
+.esri-legend--card__layer-caption {
+    color: #9FEAF9 !important;
+}
+
+
+
+/*.esri-widget {*/
+    /*background-color: transparent;*/
 /*}*/
+
+
+
+
 

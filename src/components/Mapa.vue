@@ -1,13 +1,14 @@
 <template>
     <div class="mapa" id="mapa">
-        <div class="jumbotron">
-            <div class="row container h-100">
+        <div class="jumbotron py-1">
+            <div class="row h-100 py-0">
                 <div class="col-lg-8 col-md-7">
                     <div id="viewDiv" class="h-100"></div>
                 </div>
                 <div class="col-lg-4 col-md-5 d-flex flex-column justify-content-center">
+                    <h3 class="mb-5 text-emph">Cobertura de energía y plantas de generación</h3>
                     <p class="text-white">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Actualmente Colombia cuenta con una cobertura energética del 97% y se espera que para el 2030 sea del 100%. Adicionalemente, existen 176 plantas de generación de energía, de las cuales la mayor parte (122) corresponde a proyectos hidroeléctricos y solo uno a un parque eólico.
                     </p>
                     <span><router-link to="/main"><i class="fas fa-arrow-alt-circle-left"></i> Regresar</router-link></span>
                 </div>
@@ -18,11 +19,6 @@
 
 
 <script>
-var dojoConfig = {
-    has: {
-        "esri-featurelayer-webgl": 1
-    }
-};
 
 import { loadModules } from "esri-loader";
 export default {
@@ -39,31 +35,46 @@ export default {
 
         // Cargar modulos que se utilizan en el api de javascript
         loadModules([
-            "esri/views/MapView",
             "esri/Map",
+            "esri/views/MapView",
             "esri/layers/FeatureLayer",
+            "esri/widgets/Expand",
+            "esri/widgets/Legend",
 
             "esri/core/watchUtils",
-            "dojo/query"
+            "dojo/query",
+            "dojo/aspect",
+            "dojo/domReady!"
             ], options
-        ).then(([MapView, Map ,FeatureLayer, watchUtils, dojoQuery]) => {
+        ).then(([Map, MapView, FeatureLayer, Expand, Legend, watchUtils, dojoQuery, aspect]) => {
 
             // Acceder y declarar las diferentes capas
+            const coberturaMun = new FeatureLayer({
+                url: "https://services.arcgis.com/8DAUcrpQcpyLMznu/arcgis/rest/services/Energia_Municipios_WFL1/FeatureServer/4"
+            });
+
             const coberturaDpto = new FeatureLayer({
                 portalItem: {
-                    id: "213d1c47029640278edebaeda4aad2ac"
+                    id: "e83d766e082647d79a913275641a955a"
                 }
             });
 
-            const estacionesEnergia = new FeatureLayer({
-                url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Generación_Real/MapServer/0"
+            const estacionesEnergia1 = new FeatureLayer({
+                portalItem: {
+                    id: "9e34b2529e6a4b1ab9d4af2fdec8018f"
+                }
             });
+
+            // const estacionesEnergia2 = new FeatureLayer({
+            //     portalItem: {
+            //         id: "9e34b2529e6a4b1ab9d4af2fdec8018f"
+            //     }
+            // });
 
 
             // Crear mapa
             const map = new Map({
-                basemap: "none",
-                layers: [coberturaDpto]
+                layers: [coberturaMun, coberturaDpto, estacionesEnergia1]
             });
 
             // Crear vista del mapa
@@ -115,6 +126,7 @@ export default {
             function setupHoverTooltip(layerview) {
                 var promise;
                 var highlight;
+                var tooltipHTML;
 
                 var tooltip = createTooltip();
                 console.log(tooltip);
@@ -141,8 +153,18 @@ export default {
                                 var graphic = results[0].graphic;
                                 var screenPoint = hit.screenPoint;
 
+                                tooltipHTML = `
+                                    <p class="text-emph">${graphic.getAttribute("NOMBRE_DPT")}</p>
+                                    <p>
+                                        Cobertura: <span class="text-emph">${graphic.getAttribute("Cobertura")}%</span>
+                                        <br>
+                                        Población: <span class="text-emph">${graphic.getAttribute("Poblacion")}</span>
+                                    </p>
+                                `;
+
+
                                 highlight = layerview.highlight(graphic);
-                                tooltip.show(screenPoint, "TOOLTIP");
+                                tooltip.show(screenPoint, tooltipHTML);
                             } else {
                                 tooltip.hide();
                             }
@@ -207,7 +229,7 @@ export default {
             }
 
             // Añadir fuentes
-            const sourceHtml = `Fuente: <a href="http://arcgis.simec.gov.co:6080/arcgis/rest/services" target="_blank">UPME<a/>`;
+            const sourceHtml = `<span class="text-white">Fuente:</span> <a href="http://arcgis.simec.gov.co:6080/arcgis/rest/services" target="_blank">UPME<a/>`;
 
             coberturaDpto.watch("loaded", function(){
                 watchUtils.whenFalseOnce(view, "updating", function(){
@@ -215,6 +237,31 @@ export default {
                     attribs.innerHTML = sourceHtml;
                 });
             });
+
+            // Añadir leyenda
+            const legend = new Expand({
+                content: new Legend ({
+                    view: view,
+                    style: "card",
+                    layerInfos: [{
+                        title: "Plantas de generación",
+                        layer: estacionesEnergia1
+                    }]
+                }),
+                view: view
+            });
+
+            watchUtils.when(legend, "container", function() {
+                aspect.after(legend, "scheduleRender", function(response) {
+                    if (dojoQuery('.esri-legend--card__layer-caption')[0]) {
+                        dojoQuery('.esri-legend--card__layer-caption')[0].innerHTML= 'Tipo de planta';
+                    }
+                });
+            });
+
+            view.ui.add(legend, "bottom-left");
+
+
 
 
 
@@ -230,6 +277,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style src="./mapa.css" scoped>
+<style src="./mapa.css">
 
 </style>

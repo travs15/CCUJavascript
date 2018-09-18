@@ -1,7 +1,6 @@
 <template>
-  <div class="skill">
+  <div class="main">
   <body>
-      <div id="viewDiv"></div>
       <div class="container">
 
         <div class="row mt-5">
@@ -56,10 +55,6 @@ export default {
   }
 }
 </script>
-
-
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style src="./main.css" scoped>
+<style src="./styles.css" scoped>
 
 </style>
